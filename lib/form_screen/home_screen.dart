@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ucp2/widget_screen/form_kuliner_widget.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key, required this.email});
+  const HomeScreen({Key? key, required this.email}) : super(key: key);
 
   final String email;
 
@@ -14,8 +15,21 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("Hi")],
+          children: [
+            Text("Hi"),
+          ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => FormKulinerScreen(),
+            ),
+          );
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
